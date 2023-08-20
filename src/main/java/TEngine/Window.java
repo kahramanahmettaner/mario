@@ -31,13 +31,14 @@ public class Window {
         switch (newScene) {
             case 0:
                 currentScene = new LevelEditorScene();
-                //currentScene.init();
+                currentScene.init();
                 break;
             case 1:
                 currentScene = new LevelScene();
+                currentScene.init();
                 break;
             default:
-                assert false: "Unknow scene '" + newScene + "'";
+                assert false: "Unknown scene '" + newScene + "'";
                 break;
         }
     }
@@ -125,7 +126,7 @@ public class Window {
             // Poll Events
             glfwPollEvents();
 
-            glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+            glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
 
             if (dt >= 0) {
