@@ -1,5 +1,7 @@
 package TEngine;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import components.Sprite;
 import components.SpriteRenderer;
 import components.Spritesheet;
@@ -25,12 +27,22 @@ public class LevelEditorScene extends Scene{
         sprites = AssetPool.getSpritesheet("assets/images/spritesheet.png");
 
         obj1 = new GameObject("Object 1", new Transform(new Vector2f(1000, 100), new Vector2f(256, 256)), 1);
-        obj1.addComponent(new SpriteRenderer(sprites.getSprite(0)));
+        SpriteRenderer obj1SpriteRenderer = new SpriteRenderer();
+        Sprite obj1Sprite = new Sprite();
+        obj1Sprite.setTexture(AssetPool.getTexture("assets/images/spritesheet.png"));
+        obj1SpriteRenderer.setSprite(obj1Sprite);
+        obj1.addComponent(obj1SpriteRenderer);
         this.addGameObjectToScene(obj1);
         this.activeGameObject = obj1;
         //GameObject obj2 = new GameObject("Object 2", new Transform(new Vector2f(400, 100), new Vector2f(256, 256)));
         //obj2.addComponent(new SpriteRenderer(sprites.getSprite(10)));
         //this.addGameObjectToScene(obj2);
+
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+
+        System.out.println(gson.toJson(obj1));
     }
 
     private void loadResources() {

@@ -13,7 +13,11 @@ public class Texture {
     private int texID;
     private int width, height;
 
-    public Texture(String filepath) {
+ //   public Texture(String filepath) {
+//
+ //   }
+
+    public void init(String filepath) {
         this.filepath = filepath;
 
         // Generate texture on GPU
@@ -54,7 +58,6 @@ public class Texture {
         }
 
         stbi_image_free(image);
-
     }
 
     public void bind() {
