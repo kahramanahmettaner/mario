@@ -1,7 +1,5 @@
 package components;
 
-import TEngine.Component;
-
 public class FontRenderer extends Component {
 
     @Override

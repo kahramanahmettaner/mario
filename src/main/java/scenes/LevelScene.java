@@ -1,6 +1,6 @@
-package TEngine;
+package scenes;
 
-public class LevelScene extends Scene{
+public class LevelScene extends Scene {
 
     public LevelScene() {
 

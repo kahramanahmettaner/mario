@@ -1,6 +1,5 @@
 package components;
 
-import TEngine.Component;
 import TEngine.Transform;
 import imgui.ImGui;
 import org.joml.Vector2f;
