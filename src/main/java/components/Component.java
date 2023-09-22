@@ -2,7 +2,6 @@ package components;
 
 import TEngine.GameObject;
 import imgui.ImGui;
-import imgui.ImInt;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
