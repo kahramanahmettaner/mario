@@ -1,6 +1,6 @@
 package TEngine;
 
-import editor.GameViewWWindow;
+import editor.GameViewWindow;
 import imgui.*;
 import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
@@ -184,7 +184,7 @@ public class ImGuiLayer {
         setupDockspace();
         currentScene.sceneImgui();
         ImGui.showDemoWindow();
-        GameViewWWindow.imgui();
+        GameViewWindow.imgui();
         ImGui.end();
         ImGui.render();
 
