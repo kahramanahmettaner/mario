@@ -12,7 +12,9 @@ public class EditorCamera  extends Component{
 
     private Camera levelEditorCamera;
     private Vector2f clickOrigin;
+
     private float dragSensitivity = 30.0f;
+    private float scrollSensitivity = 0.1f;
 
     public EditorCamera(Camera levelEditorCamera) {
         this.levelEditorCamera = levelEditorCamera;
@@ -35,6 +37,12 @@ public class EditorCamera  extends Component{
         // TODO: if GLFW_MOUSE_BUTTON_MIDDLE is being released outside the gameViewWindow then it is not being detected
         if (dragDebounce <= 0.0f && !MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)) {
             dragDebounce = 0.1f;
+        }
+
+        if (MouseListener.getScrollY()!= 0.0f) {
+            float addValue = (float)Math.pow(Math.abs(MouseListener.getScrollY() * scrollSensitivity), 1 / levelEditorCamera.getZoom());
+            addValue *= -Math.signum(MouseListener.getScrollY());
+            levelEditorCamera.addZoom(addValue);
         }
     }
 }

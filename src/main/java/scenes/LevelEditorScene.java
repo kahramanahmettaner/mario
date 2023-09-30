@@ -62,6 +62,8 @@ public class LevelEditorScene extends Scene {
     @Override
     public void update(float dt) {
         levelEditorStuff.update(dt);
+        this.camera.adjustProjection();
+
         // DebugDraw.addCircle(new Vector2f(x, y), 64, new Vector3f(0.0f, 1.0f, 0.0f), 1);
         //x += 50f * dt;
         //y += 50 * dt;
