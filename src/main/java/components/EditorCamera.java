@@ -1,10 +1,11 @@
 package components;
 
 import TEngine.Camera;
+import TEngine.KeyListener;
 import TEngine.MouseListener;
 import org.joml.Vector2f;
 
-import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_MIDDLE;
+import static org.lwjgl.glfw.GLFW.*;
 
 public class EditorCamera  extends Component{
 
@@ -12,7 +13,9 @@ public class EditorCamera  extends Component{
 
     private Camera levelEditorCamera;
     private Vector2f clickOrigin;
+    private boolean reset = false;
 
+    private float lerpTime = 0.0f;
     private float dragSensitivity = 30.0f;
     private float scrollSensitivity = 0.1f;
 
@@ -43,6 +46,22 @@ public class EditorCamera  extends Component{
             float addValue = (float)Math.pow(Math.abs(MouseListener.getScrollY() * scrollSensitivity), 1 / levelEditorCamera.getZoom());
             addValue *= -Math.signum(MouseListener.getScrollY());
             levelEditorCamera.addZoom(addValue);
+        }
+
+        if (KeyListener.isKeyPressed(GLFW_KEY_KP_DECIMAL)) {
+            reset = true;
+        }
+
+        if (reset) {
+            levelEditorCamera.position.lerp(new Vector2f(), lerpTime);
+            levelEditorCamera.setZoom(this.levelEditorCamera.getZoom() + ((1.0f - levelEditorCamera.getZoom()) * lerpTime));
+            this.lerpTime += 0.1f * dt;
+            if (Math.abs(levelEditorCamera.position.x) <= 5.0f && Math.abs(levelEditorCamera.position.y) <= 5.0f) {
+                this.lerpTime = 0.0f;
+                levelEditorCamera.position.set(0f, 0f);
+                this.levelEditorCamera.setZoom(1.0f);
+                reset = false;
+            }
         }
     }
 }
