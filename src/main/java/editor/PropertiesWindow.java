@@ -22,8 +22,6 @@ public class PropertiesWindow {
     public void update(float dt, Scene currentScene) {
         debounce -= dt;
 
-        // TODO: Address the issue where clicking the gizmo arrow causes it to unexpectedly move away. This occurs because the arrow itself becomes the active GameObject when clicked.
-
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0) {
             int x = (int)MouseListener.getScreenX();
             int y = (int)MouseListener.getScreenY();
