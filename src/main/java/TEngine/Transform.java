@@ -1,6 +1,7 @@
 package TEngine;
 
 import components.Component;
+import editor.TImGui;
 import org.joml.Vector2f;
 
 public class Transform extends Component {
