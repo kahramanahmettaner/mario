@@ -44,16 +44,10 @@ public abstract class Component {
 
                 if (type == int.class) {
                     int val = (int)value;
-                    int[] imInt = {val};
-                    if (ImGui.dragInt(name + ": ", imInt)) {
-                        field.set(this, imInt[0]);
-                    }
+                    field.set(this, TImGui.dragInt(name, val));
                 } else if (type == float.class) {
                     float val = (float)value;
-                    float[] imFloat = {val};
-                    if (ImGui.dragFloat(name + ": ", imFloat)) {
-                        field.set(this, imFloat[0]);
-                    }
+                    field.set(this, TImGui.dragFloat(name, val));
                 } else if (type == boolean.class) {
                     boolean val = (boolean)value;
                     if (ImGui.checkbox(name + ": ", val)) {

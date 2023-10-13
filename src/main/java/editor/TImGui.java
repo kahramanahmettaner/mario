@@ -71,4 +71,38 @@ public class TImGui {
         ImGui.columns(1);
         ImGui.popID();
     }
+
+    public static float dragFloat(String label, float value) {
+        ImGui.pushID(label);
+
+        ImGui.columns(2);
+        ImGui.setColumnWidth(0, defaultColumnWidth);
+        ImGui.text(label);
+        ImGui.nextColumn();
+
+        float[] valArr = {value};
+        ImGui.dragFloat("##dragFloat", valArr, 0.1f);
+
+        ImGui.columns(1);
+        ImGui.popID();
+
+        return valArr[0];
+    }
+
+    public static int dragInt(String label, int value) {
+        ImGui.pushID(label);
+
+        ImGui.columns(2);
+        ImGui.setColumnWidth(0, defaultColumnWidth);
+        ImGui.text(label);
+        ImGui.nextColumn();
+
+        int[] valArr = {value};
+        ImGui.dragInt("##dragInt", valArr, 0.1f);
+
+        ImGui.columns(1);
+        ImGui.popID();
+
+        return valArr[0];
+    }
 }
