@@ -4,6 +4,7 @@ import imgui.ImGui;
 import imgui.flag.ImGuiCol;
 import imgui.flag.ImGuiStyleVar;
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 
 public class TImGui {
 
@@ -104,5 +105,26 @@ public class TImGui {
         ImGui.popID();
 
         return valArr[0];
+    }
+
+    public static boolean colorPicker4(String label, Vector4f color) {
+        boolean result = false;
+        ImGui.pushID(label);
+
+        ImGui.columns(2);
+        ImGui.setColumnWidth(0, defaultColumnWidth);
+        ImGui.text(label);
+        ImGui.nextColumn();
+
+        float[] imColor = {color.x, color.y, color.z, color.w};
+        if (ImGui.colorEdit4("##colorPicker", imColor)) {
+            color.set(imColor[0], imColor[1], imColor[2], imColor[3]);
+            result = true;
+        }
+
+        ImGui.columns(1);
+        ImGui.popID();
+
+        return result;
     }
 }
