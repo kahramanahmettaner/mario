@@ -38,6 +38,14 @@ public class Transform extends Component {
     }
 
     @Override
+    public void imgui() {
+        TImGui.drawVec2Control("Position", this.position);
+        TImGui.drawVec2Control("Scale", this.scale, 32.0f);
+        this.rotation = TImGui.dragFloat("Rotation", this.rotation);
+        this.zIndex = TImGui.dragInt("Z-Index", this.zIndex);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null) return false;
         if (!(o instanceof Transform)) return false;
