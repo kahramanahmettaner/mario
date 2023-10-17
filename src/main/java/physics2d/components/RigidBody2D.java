@@ -27,7 +27,7 @@ public class RigidBody2D extends Component {
         }
     }
 
-    public Vector2f velocity() {
+    public Vector2f getVelocity() {
         return velocity;
     }
 
@@ -35,7 +35,7 @@ public class RigidBody2D extends Component {
         this.velocity = velocity;
     }
 
-    public float angularDamping() {
+    public float getAngularDamping() {
         return angularDamping;
     }
 
@@ -43,7 +43,7 @@ public class RigidBody2D extends Component {
         this.angularDamping = angularDamping;
     }
 
-    public float linearDamping() {
+    public float getLinearDamping() {
         return linearDamping;
     }
 
@@ -51,7 +51,7 @@ public class RigidBody2D extends Component {
         this.linearDamping = linearDamping;
     }
 
-    public float mass() {
+    public float getMass() {
         return mass;
     }
 
@@ -59,7 +59,7 @@ public class RigidBody2D extends Component {
         this.mass = mass;
     }
 
-    public BodyType bodyType() {
+    public BodyType getBodyType() {
         return bodyType;
     }
 
@@ -67,7 +67,7 @@ public class RigidBody2D extends Component {
         this.bodyType = bodyType;
     }
 
-    public boolean fixedRotation() {
+    public boolean isFixedRotation() {
         return fixedRotation;
     }
 
@@ -75,7 +75,7 @@ public class RigidBody2D extends Component {
         this.fixedRotation = fixedRotation;
     }
 
-    public boolean continuousCollision() {
+    public boolean isContinuousCollision() {
         return continuousCollision;
     }
 
@@ -83,7 +83,7 @@ public class RigidBody2D extends Component {
         this.continuousCollision = continuousCollision;
     }
 
-    public Body rawBody() {
+    public Body getRawBody() {
         return rawBody;
     }
 
