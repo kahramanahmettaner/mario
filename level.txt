@@ -1,6 +1,6 @@
 [
   {
-    "uid": 24,
+    "uid": 12,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -63,7 +63,7 @@
         "properties": {
           "velocity": {
             "x": 0.0,
-            "y": 0.0
+            "y": 22.3
           },
           "angularDamping": 0.8,
           "linearDamping": 0.9,

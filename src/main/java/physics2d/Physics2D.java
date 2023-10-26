@@ -78,7 +78,7 @@ public class Physics2D {
     public void update(float dt) {
         physicsTime += dt;
         if (physicsTime >= 0.0f) {
-            physicsTime *= physicsTimeStep;
+            physicsTime -= physicsTimeStep;
             world.step(physicsTime, velocityIterations, positionIterations);
         }
     }
