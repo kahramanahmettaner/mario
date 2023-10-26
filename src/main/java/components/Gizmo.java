@@ -21,12 +21,11 @@ public class Gizmo extends Component {
     private SpriteRenderer xAxisSprite;
     private SpriteRenderer yAxisSprite;
     protected GameObject activeGameObject = null;
+    private Vector2f xAxisOffset = new Vector2f(.7f, -.07f);
+    private Vector2f yAxisOffset = new Vector2f(.13f, .7f);
 
-    private Vector2f xAxisOffset = new Vector2f(64, -5);
-    private Vector2f yAxisOffset = new Vector2f(16, 60);
-
-    private int gizmoWidth = 16;
-    private int gizmoHeight = 48;
+    private float gizmoWidth = 16f / 80f;
+    private float gizmoHeight = 48f / 80f;
 
     protected boolean xAxisActive = false;
     protected boolean yAxisActive = false;
@@ -36,8 +35,8 @@ public class Gizmo extends Component {
     private PropertiesWindow propertiesWindow;
 
     public Gizmo(Sprite arrowSprite, PropertiesWindow propertiesWindow) {
-        this.xAxisObject = Prefabs.generateSpriteObejct(arrowSprite, 16, 48);
-        this.yAxisObject = Prefabs.generateSpriteObejct(arrowSprite, 16, 48);
+        this.xAxisObject = Prefabs.generateSpriteObejct(arrowSprite, gizmoWidth, gizmoHeight);
+        this.yAxisObject = Prefabs.generateSpriteObejct(arrowSprite, gizmoWidth, gizmoHeight);
         this.xAxisSprite = this.xAxisObject.getComponent(SpriteRenderer.class);
         this.yAxisSprite = this.yAxisObject.getComponent(SpriteRenderer.class);
         this.propertiesWindow = propertiesWindow;
