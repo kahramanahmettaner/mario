@@ -1,6 +1,6 @@
 [
   {
-    "uid": 0,
+    "uid": 104,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -97,7 +97,7 @@
     "isDead": false
   },
   {
-    "uid": 1,
+    "uid": 105,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -194,14 +194,14 @@
     "isDead": false
   },
   {
-    "uid": 2,
+    "uid": 106,
     "name": "Sprite_Object_Gen",
     "components": [
       {
         "type": "TEngine.Transform",
         "properties": {
           "position": {
-            "x": -248.0,
+            "x": -248.12325,
             "y": 2.7639866
           },
           "scale": {
@@ -291,7 +291,7 @@
     "isDead": false
   },
   {
-    "uid": 3,
+    "uid": 107,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -388,7 +388,7 @@
     "isDead": false
   },
   {
-    "uid": 4,
+    "uid": 108,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -485,7 +485,7 @@
     "isDead": false
   },
   {
-    "uid": 5,
+    "uid": 109,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -582,7 +582,7 @@
     "isDead": false
   },
   {
-    "uid": 6,
+    "uid": 110,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -679,7 +679,7 @@
     "isDead": false
   },
   {
-    "uid": 12,
+    "uid": 111,
     "name": "Sprite_Object_Gen",
     "components": [
       {
