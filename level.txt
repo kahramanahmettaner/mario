@@ -195,7 +195,7 @@
   },
   {
     "uid": 2,
-    "name": "Sprite_Object_Gen",
+    "name": "obj",
     "components": [
       {
         "type": "TEngine.Transform",
