@@ -19,16 +19,7 @@ public class SceneHierarchyWindow {
                 continue;
             }
 
-            ImGui.pushID(index);
-            boolean treeNodeOpen = ImGui.treeNodeEx(
-                    obj.name,
-                    ImGuiTreeNodeFlags.DefaultOpen |
-                            ImGuiTreeNodeFlags.FramePadding |
-                            ImGuiTreeNodeFlags.OpenOnArrow |
-                            ImGuiTreeNodeFlags.SpanAvailWidth,
-                    obj.name
-            );
-            ImGui.popID();
+            boolean treeNodeOpen = doTreeNode(obj, index);
 
             if (treeNodeOpen) {
                 ImGui.treePop();
@@ -37,5 +28,20 @@ public class SceneHierarchyWindow {
         }
 
         ImGui.end();
+    }
+
+    private boolean doTreeNode(GameObject obj, int index){
+        ImGui.pushID(index);
+        boolean treeNodeOpen = ImGui.treeNodeEx(
+                obj.name,
+                ImGuiTreeNodeFlags.DefaultOpen |
+                        ImGuiTreeNodeFlags.FramePadding |
+                        ImGuiTreeNodeFlags.OpenOnArrow |
+                        ImGuiTreeNodeFlags.SpanAvailWidth,
+                obj.name
+        );
+        ImGui.popID();
+
+        return treeNodeOpen;
     }
 }
